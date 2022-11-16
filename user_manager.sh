@@ -11,3 +11,19 @@ echo "Creating groups..."
 groupadd GRP_VEN && groupadd GRP_SEC && groupadd GRP_ADM
 
 echo "Groups created successfuly!"
+
+echo "Creating users ..."
+
+useradd -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_ADM carlos
+useradd -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_ADM maria
+useradd -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_ADM joao
+
+useradd debora -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_VEN
+useradd sebastiana -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_VEN
+useradd roberto  -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_VEN
+
+useradd josefina -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
+useradd amanda -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
+useradd rogerio -m -s /bin/bash -p $(openssl passwd Senha123) -G GRP_SEC
+
+echo "Users created successfuly!"
